@@ -19,7 +19,7 @@ void ofApp::update() {
   // update the sound playing system:
   ofSoundUpdate();
 
-  carl.setVolume(0.0);
+  // carl.setVolume(0.0);
 
   // (5) grab the fft, and put in into a "smoothed" array,
   //		by taking maximums, as peaks and then smoothing downward
@@ -40,8 +40,8 @@ void ofApp::update() {
     //   }
     //    val[i];
   }
-  // t += fftSmoothed[2] * 2.0 / 30.0;
-  t += 0.002;
+  t += fftSmoothed[2] * 2.0 / 30.0;
+  // t += 0.002;
 }
 
 void drawNoisySquare(ofRectangle bounds, ofColor color, float i) {
@@ -73,7 +73,7 @@ void drawNoisySquare(ofRectangle bounds, ofColor color, float i) {
 //--------------------------------------------------------------
 void ofApp::draw() {
   ofEnableBlendMode(OF_BLENDMODE_ALPHA);
-  ofSetColor(0, 0, 0, 50);
+  ofSetColor(0, 0, 0, 40);
   ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
 
   // draw the fft resutls:
